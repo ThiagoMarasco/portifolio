@@ -1,0 +1,30 @@
+/* reset.css */
+
+/* Reset de margens e preenchimentos */
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Reset de estilos para listas não ordenadas */
+ul {
+    list-style: none;
+}
+
+/* Reset de estilos para links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Reset de estilos para elementos de formulário */
+input, button, textarea, select {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    outline: none;
+}
+
+/* Outras regras de reset podem ser adicionadas conforme necessário. */
