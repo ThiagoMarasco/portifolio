@@ -12,7 +12,7 @@ body{
 
 /* BARRA DE NAVEGAÇÃO */
 .sidebar{
-    display:none;
+  display: none;
     height:100%;
     width:120px;
     background-color:#1f1c1c;

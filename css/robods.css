@@ -1,0 +1,106 @@
+a{
+    text-decoration: none;
+    color: hsla(159, 42%, 88%, 1);
+
+}
+
+
+.sub-titulo {
+    color: hsla(160, 52%, 71%, 1);
+    display: flex;
+    justify-content: space-between; /* Distribui os itens igualmente ao longo do eixo horizontal */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+}
+
+.sub-titulo h1{
+    color: hsla(159, 42%, 88%, 1);
+
+}
+.base {
+    flex: 1; /* Faz com que as divs ocupem a mesma quantidade de espaço */
+    padding: 20px;
+    margin: 10px;
+}
+
+.base p{
+
+    font-size: 24px;
+}
+
+.exemplo1{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    flex-direction: column;
+    display: flex;
+    max-width: 1250px;
+}
+
+main{
+    margin-top: 100px;
+}
+
+
+img{
+    object-fit: fill;
+    border-radius: 30px;
+    box-shadow: 30px;
+}
+
+
+.subtitulo{
+    
+    max-width: 704px;
+    font-size: clamp(1rem, .8852rem + .4898vw, 1.375rem);
+    align-items: center;
+    text-align: left;
+
+}
+
+.subtitulo p{
+    line-height: 35px;
+    letter-spacing: 1px;
+    font-size: 24px;
+    color: hsla(159, 42%, 88%, 1);
+}
+
+.titulo{
+    color: hsla(160, 52%, 71%, 1);
+}
+
+.tituloh1{
+    color: hsla(160, 52%, 71%, 1);
+    margin-bottom: 20px;
+    font-size: 64px;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .base{
+
+        margin: 0px;
+        margin-top: 40px;
+        font-size: 12px;
+        padding: 2px;
+    }
+
+    .base p{
+
+        
+        font-size: 16px;
+    }
+    .sub-titulo{
+        display: inline;
+        
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .exemplo1{
+
+        margin: 50px;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+
+}
