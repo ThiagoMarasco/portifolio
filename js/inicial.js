@@ -7,3 +7,21 @@ window.addEventListener('scroll', () => {
         nav.classList.remove('scrolled'); // Remove a classe quando a página volta ao topo
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const botaoMostrar = document.getElementById("mostrar-conteudo");
+    const conteudo = document.getElementById("conteudo");
+
+    botaoMostrar.addEventListener("click", function() {
+        if (conteudo.style.display === "none") {
+            conteudo.style.display = "flex"; // Muda para block para exibir
+        } else {
+            conteudo.style.display = "none"; // Muda para none para esconder
+        }
+    });
+
+    window.addEventListener("scroll", function() {
+        conteudo.style.display = "none"; // Esconde o conteúdo ao redimensionar a tela
+    });
+});
+

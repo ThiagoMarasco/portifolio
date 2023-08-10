@@ -8,21 +8,35 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
 }
 
 
 
 body {
-    position: relative;
+    background: linear-gradient(300deg,#327471,#327471,#3a3f3f);
+    background-size: 180% 180%;
+    animation: gradient-animation 10s ease infinite;
     display: flex;
     flex-direction: column;
 }
 
+  
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
 
 header {
+    z-index: 100;
     align-self: center;
-
     max-width: 100%;
     margin-top: 16px;
     position: fixed;
@@ -34,6 +48,7 @@ header {
 
 
 nav{
+    z-index: 100;
     justify-content: center;
     width: 100%;
     color: hsla(159, 42%, 88%, 1);
@@ -53,6 +68,7 @@ nav.scrolled {
 
 
 .list-nav {
+    vertical-align: middle;
     list-style: none;
     display: flex;
     gap: 20px;
@@ -62,6 +78,7 @@ nav.scrolled {
 
 
 .list-nav li {
+    vertical-align: middle;
     font-size: 19px;
     list-style: none;
     display: flex;
@@ -119,11 +136,18 @@ main {
     box-sizing: border-box;
     text-align: right; 
     background-color: #63E2C6;
-    padding: 30px;
-    border-radius: 50px;
+    padding: 50px;
+    border-radius: 75px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+}
+
+.trabalhos img{
+    object-fit: contain;
+    width: 1200px;
+    height: 1200px;
+    border-radius: 50px;
 }
 
 .card-1 {
@@ -135,15 +159,10 @@ main {
 
 }
 
+.card-1:hover,.card-2:hover,.card-3:hover,.card-4:hover{
+    transform: scale(1.1);
 
-.trabalhos img{
-    object-fit: contain;
-    max-width: inherit;
-    width: 1200px;
-    height: 1200px;
-    border-radius: 50px;
 }
-
 
 .card-2 {
     background-color: #e79adc;
@@ -164,10 +183,14 @@ main {
     max-height: 550px;
 }
 
+.card-1 img{
+    width: 1300px;
+}
+
 .titulo2 {
     margin-top: 130px;
-    color: #7cfff8;
-    font-size: 32px;
+    color: hsla(160, 52%, 71%, 1);
+    font-size: 64px;
 }
 
 
@@ -181,6 +204,11 @@ footer{
     max-height: 100%;
     padding: 40px;
     display: flex;
+}
+
+footer h1{
+
+    color:hsla(160, 52%, 71%, 1);
 }
 
 .box-one{
@@ -197,12 +225,26 @@ footer{
 }
 
 
-.contato{
+.barra-magica{
+    vertical-align: middle;
 
-    margin-top: -92px;
+    position: fixed;
+    bottom: 100px;
+    width: 86%;
+    padding: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    max-height: 150px;
+    background:hsla(140, 1%, 42%, 0.404);
+    border-radius: 40px;
+    backdrop-filter: blur(20px) saturate(1.7);
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 999;
 
 }
-
 
 
 @media (max-width: 768px) {
@@ -224,8 +266,13 @@ footer{
     }
 
     .list-nav li {
-        font-size: 16px;
+        font-size: 12px;
+        gap: 6px;
         padding: 2px; /* Reduz o espaçamento interno dos itens de navegação */
+    }
+    .list-nav img {
+        max-width: 16px;
+
     }
     .list-nav {
         gap: 10px;
@@ -260,6 +307,9 @@ footer{
         height: 100%;
     
     }
+    .titulo2{
+        font-size: 32px;
+    }
 
     .card-1, .card-2, .card-3, .card-4 {
         width: 100%; /* Ocupa a largura total em telas menores */
@@ -268,6 +318,10 @@ footer{
         margin-bottom: 20px;
          /* Adiciona margem inferior para separar os cartões */
         
+    }
+    .barra-magica{
+        font-size: 12px;
+        margin: 5px;
     }
 
 }

@@ -12,6 +12,7 @@ main {
 }
 
 .box-image {
+    
     margin-right: 100px;
     padding: 20px;
     display: flex;
@@ -20,6 +21,7 @@ main {
 }
 
 .sub-text {
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
     display: flex;
     width: 364px;
     align-items: center;
@@ -41,6 +43,7 @@ main {
 }
 
 .box-image img {
+    
     width: 384px;
     border-radius: 200px 200px 0 0;
 }
@@ -282,6 +285,7 @@ font-size: 22px;
 }
 
 .passos{
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     padding: 150px;
     margin-top: 100px;
@@ -313,11 +317,13 @@ font-size: 22px;
 }
 
 .card-1:hover{
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
   
   overflow: visible;
 
 }
 .card-2:hover{
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
   max-height: 1200px;
 
   height: 1200px;
