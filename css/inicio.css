@@ -1,7 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=REM&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,700&display=swap");
 html, body {
     font-family: 'rem', serif;
     background-color: #327471;
