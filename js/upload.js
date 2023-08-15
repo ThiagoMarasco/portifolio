@@ -3,7 +3,7 @@ document.getElementById('upload-form').addEventListener('submit', function(event
 
     const formData = new FormData(this);
 
-    fetch('./php/upload/upload.php', {
+    fetch('http://127.0.0.1/php/upload/upload.php', {
         method: 'POST',
         body: formData
     })
@@ -22,7 +22,7 @@ document.getElementById('upload-form').addEventListener('submit', function(event
     
     const formData = new FormData(this);
 
-    fetch('./php/save_event.php', {
+    fetch('http://127.0.0.1/php/save_event.php', {
         method: 'POST',
         body: formData
     })

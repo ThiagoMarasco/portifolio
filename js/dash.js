@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Carregar os dados do JSON
     // Carregar os dados do PHP usando fetch
     
-    const response = await fetch('./php/get_dashboard.php');
+    const response = await fetch('http://127.0.0.1/php/get_dashboard.php');
     const dadosJSON = await response.json();
 
     function updateAlerts(selectedDate) {
