@@ -299,7 +299,7 @@ font-size: 22px;
 }
 
 .um{
-    font-size: 22px;
+    font-size: 24px;
     line-height: 32px;
     margin-right: 20px;
     margin-bottom: 100px;
@@ -307,6 +307,18 @@ font-size: 22px;
     text-align: justify;
     flex-basis: calc(50% - 10px);
 
+}
+
+.um h4{
+  color: hsla(172, 95%, 18%, 1);
+}
+.um h1{
+  color: hsla(160, 52%, 71%, 1);
+}
+
+.um p{
+
+  font-size: 24px;
 }
 
 .trabalhos,.card-1,.card-2{
@@ -365,6 +377,8 @@ font-size: 22px;
     left: auto;
     right: -28px;
   }
+
+
 
   .direction-l {
     position: relative;
@@ -489,11 +503,17 @@ font-size: 22px;
     padding-top: 70px;
   }
   .um{
+    margin: 0;
+    margin-bottom: 10px;
     font-size: 12px;
     line-height: 20px;
     max-width: 576px;
     text-align: justify;
     flex-basis: calc(50% - 10px);
+  }
+  .um p{
+
+    font-size: 12px;
   }
   .box-text h1 {
     font-size: 36px;

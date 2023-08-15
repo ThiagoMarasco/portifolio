@@ -1,0 +1,130 @@
+
+
+.circle {
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #ff5733;
+    border-radius: 50%;
+    animation: colorChange 1s infinite;
+}
+
+.fase-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:hsla(154, 3%, 55%, 0.404);
+    border-radius: 10px;
+    backdrop-filter: blur(20px) saturate(1.7);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    display: flex;
+
+}
+
+.fase-1:hover{
+    background:hsla(154, 14%, 49%, 0.404);
+    border-radius: 10px;
+    backdrop-filter: blur(20px) saturate(1.7);
+    transform: scale(1.01);
+
+}
+
+.upsize{
+    background:hsla(0, 0%, 0%, 0.404);
+    border-radius: 10px;
+    backdrop-filter: blur(20px) saturate(1.7);
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 94%;
+
+}
+
+.upsize:hover{
+    background:hsla(150, 14%, 8%, 0.404);
+    border-radius: 10px;
+    backdrop-filter: blur(20px) saturate(1.7);
+    transform: scale(1.01);
+    
+}
+.upsize p{
+    line-height: 35px;
+    letter-spacing: 1px;
+    font-size: 24px;
+    color: hsla(159, 42%, 88%, 1);
+
+}
+
+.upsize h1{
+    color: hsla(160, 52%, 71%, 1);
+    font-size: 36px;
+    text-align: left;
+}
+
+.size{
+    margin-top: 80px;
+    margin-bottom: 80px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    width: 40%;
+}
+.size img{
+    border-radius: 0.5px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 20px;
+}
+
+.hidden{
+    display: none;
+}
+
+@keyframes colorChange {
+    0%, 100% { background-color: rgb(0, 248, 157); }
+    25% { background-color: #d4ede4; }
+    50% { background-color: #8fdcc2; }
+    75% { background-color: #45d1a2; }
+}
+
+@media (max-width: 768px) {
+    body{
+        font-size: 12px;
+    }
+    h1{
+        font-size: 12px;
+
+    }
+    .tituloh1{
+        font-size: 32px;
+    }
+    p{
+        font-size: 12px;
+
+    }
+    .upsize{
+        padding: 10px;
+        
+    }
+    .size{
+        padding: 10px;
+        text-align: justify;
+        margin: 0;
+        width: 100%;
+    }
+    .subtitulo p ,.upsize p{
+        line-height: 25px;
+        letter-spacing: 1px;
+        font-size: 12px;
+        color: hsla(159, 42%, 88%, 1);
+    }
+    .circle{
+        width: 20px;
+        height: 20px;
+
+    }
+}
