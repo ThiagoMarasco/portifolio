@@ -12,7 +12,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const botaoMostrar = document.getElementById("mostrar-conteudo");
     const conteudo = document.getElementById("conteudo");
 
-    const botao = document.getElementById("infos");
+    botaoMostrar.addEventListener("click", function() {
+        if (conteudo.style.display === "none") {
+            conteudo.style.display = "flex"; // Muda para block para exibir
+        } else {
+            conteudo.style.display = "none"; // Muda para none para esconder
+        }
+    });
+
+    window.addEventListener("scroll", function() {
+        conteudo.style.display = "none"; // Esconde o conteúdo ao redimensionar a tela
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
     const conteudo = document.getElementById("fase-1");
     const conteudo1 = document.getElementById("fase-2");
 
@@ -27,17 +40,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-    botaoMostrar.addEventListener("click", function() {
-        if (conteudo.style.display === "none") {
-            conteudo.style.display = "flex"; // Muda para block para exibir
-        } else {
-            conteudo.style.display = "none"; // Muda para none para esconder
-        }
-    });
-
-    window.addEventListener("scroll", function() {
-        conteudo.style.display = "none"; // Esconde o conteúdo ao redimensionar a tela
-    });
 });
 
