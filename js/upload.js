@@ -1,9 +1,9 @@
 document.getElementById('upload-form').addEventListener('submit', function(event) {
     event.preventDefault();
-
+    
     const formData = new FormData(this);
 
-    fetch('http://127.0.0.1/php/upload/upload.php', {
+    fetch('http://localhost/upload.php', {
         method: 'POST',
         body: formData
     })
@@ -14,25 +14,4 @@ document.getElementById('upload-form').addEventListener('submit', function(event
     .catch(error => {
         console.error('Erro:', error);
     });
-
 });
-
-document.getElementById('upload-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const formData = new FormData(this);
-
-    fetch('http://127.0.0.1/php/save_event.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(result => {
-        console.log(result.message);
-        // Limpar os campos do formulário ou fazer qualquer ação necessária
-    })
-    .catch(error => {
-        console.error('Erro:', error);
-    });
-});
-
