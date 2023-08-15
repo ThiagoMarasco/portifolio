@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    const botao = document.getElementById("infos");
     const conteudo = document.getElementById("fase-1");
     const conteudo1 = document.getElementById("fase-2");
 
