@@ -1,0 +1,70 @@
+{
+    "Adicionado Recentimente": [
+        {
+            "imagem": "./imagens/spotify.svg",
+            "texto": "<h3>Ilustração de Templates</h3><h6>8:00 AM - 4:00 PM</h6>",
+            "data": "2023-08-12"
+        },
+        {
+            "imagem": "./imagens/spotify.svg",
+            "texto": "<h3>Ilustração de Templates</h3><h6>8:00 AM - 4:00 PM</h6>",
+            "data": "2023-08-12"
+        },
+        {
+            "imagem": "./imagens/spotify.svg",
+            "texto": "<h3>Ilustração de Templates</h3><h6>8:00 AM - 4:00 PM</h6>",
+            "data": "2023-08-12"
+        }
+    ],
+    "Em Progresso": [
+        {
+            "imagem": "./imagens/desenho1.jpeg",
+            "texto": "<h3>Texto do Item 2</h3><h6>Horário do Item 2</h6>",
+            "data": "2023-08-12"
+        },
+        {
+            "imagem": "./imagens/desenho1.jpeg",
+            "texto": "<h3>Texto do Item 3</h3><h6>Horário do Item 2</h6>",
+            "data": "2023-08-12"
+        },
+        {
+            "imagem": "./imagens/desenho1.jpeg",
+            "texto": "<h3>Texto do Item 4</h3><h6>Horário do Item 2</h6>",
+            "data": "2023-08-12"
+        }
+    ],
+    "Em revisão": [
+        {
+            "imagem": "./caminho-da-imagem-3.png",
+            "texto": "<h3>Texto do Item 3</h3><h6>Horário do Item 3</h6>",
+            "data": "2023-08-12"
+        },
+        {
+            "imagem": "./caminho-da-imagem-3.png",
+            "texto": "<h3>Texto do Item 3</h3><h6>Horário do Item 3</h6>",
+            "data": "2023-08-12"
+        },
+        {
+            "imagem": "./caminho-da-imagem-3.png",
+            "texto": "<h3>Texto do Item 3</h3><h6>Horário do Item 3</h6>",
+            "data": "2023-08-12"
+        }
+    ],
+    "Completo": [
+        {
+            "imagem": "./caminho-da-imagem-4.png",
+            "texto": "<h3>Texto do Item 4</h3><h6>Horário do Item 4</h6>",
+            "data": "2023-08-14"
+        },
+        {
+            "imagem": "./caminho-da-imagem-4.png",
+            "texto": "<h3>Texto do Item 5</h3><h6>Horário do Item 4</h6>",
+            "data": "2023-08-14"
+        },
+        {
+            "imagem": "./caminho-da-imagem-4.png",
+            "texto": "<h3>Texto do Item 5</h3><h6>Horário do Item 4</h6>",
+            "data": "2023-08-14"
+        }
+    ]
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/dashbord.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -13,37 +14,89 @@
             <img src="./imagens/iconedashboard.svg" alt="Logo" style="margin-top: 80px;">
             <div class="barra-menu">
                 <ul>
-                    <a href="#"><li class="segmento-menu-white"><img src="./imagens/icone-calendario.svg" alt="">Perfil</li></a>
-                    <a href="#"><li class="segmento-menu"><img src="./imagens/icone-calendario.svg" alt="" class="imagem-gray">DashBoard</li></a>
+                    <a href="#"><li class="segmento-menu"><img src="./imagens/icone-calendario.svg" alt="" class="imagem-gray">Perfil</li></a>
+                    <a href="dashbord.html"><li class="segmento-menu-white"><img src="./imagens/icone-calendario.svg" alt="">DashBoard</li></a>
                     <a href="#"><li class="segmento-menu"><img src="./imagens/icone-calendario.svg" alt="" class="imagem-gray">Calendario</li></a>
                     <a href="inicial.html"><li class="segmento-menu"><img src="./imagens/iconedashboard.svg" alt="" class="imagem-gray">Sair</li></a>
                 </ul>
             </div>
         </div>
     </header>
+    <div class="hidden" id="formulariobase">
+            <div class="container">  
+                <form id="upload-form" class="contact" action="upload.php" method="POST" enctype="multipart/form-data">
+                  <h2 id="exit-form">X</h2>
+                  <h3>Adicionar Evento</h3>
+                  <h4>Adicionar novo evento a agenda principal</h4>
+                  <fieldset>
+                    <input placeholder="Seu Nome" type="text" tabindex="1" required autofocus id="nome-form"  name="nome" required>
+                  </fieldset>
+                  <fieldset>
+                    <input placeholder="Seu Email" type="email" tabindex="2" id="email-form" name="email" required>
+                  </fieldset>
+                  <fieldset>
+                    <input placeholder="Horario Inicio" type="datetime-local" tabindex="3" required id="horario-inicio-form" name="horario-inicio" required>
+                  </fieldset>
+                  <fieldset>
+                    <input placeholder="Horario Fim" type="datetime-local" tabindex="3" required id="horario-fim-form" name="horario-fim" required>
+                  </fieldset>
+                  <fieldset>
+                    <input placeholder="Arquivo" type="file" name="image" tabindex="4" id="image" accept=".png, .jpg, .jpeg">
+                  </fieldset>
+                  <fieldset>
+                    <input placeholder="Titulo Reunião" type="text" tabindex="1" required autofocus id="titulo-form" name="titulo" required>
+                  </fieldset>
+                  <fieldset>
+                    <textarea placeholder="Descrição" tabindex="5" required id="descricao-form" name="descricao"></textarea>
+                  </fieldset>
+                  <fieldset>
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" value="Upload">Agendar</button>
+                  </fieldset>
+                </form>
+        </div>
+
+    </div>
     <main>
         <div class="agendamento">
             <div class="titulo">
                 <h1>Agendamento</h1>
-                <p>12/08/2023</p>
+                <div class="data-bar">
+                    <input type="date" id="date-select" style="margin-right: 20px; width: 120px;">
+                    <div id="data-container">
+                    </div>
+                    <button type="menu" class="menu1-botao" id="botao1-menu">...</button>
+                    <div id="menu-agendamento1" class="menu-base">
+                        <ul>
+                            <li style="margin-bottom: 8px;" id="add-agenda">Adicionar</li>
+                            <li>Remover</li>
+                        </ul>
+                    </div>
+                </div>  
             </div>
             <div class="lista">
                 <ul>
-                    <li>Adicionado Recentimente</li>
-                    <li>Em Progresso</li>
-                    <li>Em revisão</li>
-                    <li style="margin-right: 0">Completo</li>
+                    <li class="clickable">Adicionado Recentemente</li>
+                    <li class="clickable">Em Progresso</li>
+                    <li class="clickable">Em revisão</li>
+                    <li style="margin-right: 0" class="clickable">Completo</li>
                 </ul>
             </div>
 
-            <div class="alertas">
-                <div class="fav">
+
+        
+        <div class="alertas" id="alerta">
+            <a href="dashjanela.html">
+                <div class="fav" id="favImage" >
                     <img src="./imagens/spotify.svg" alt="">
                 </div>
-                <div class="text">
+                <div class="text" id="alertText" >
                     <h3>Ilustração de Templates</h3>
                     <h6>8:00 AM - 4:00 PM</h6>
-                </div>
+            </a>
+        </div>
+        
+
+                <!-- Resto do conteúdo -->
                 <div class="circles">
                     <div class="person">
                         <img src="./imagens/desenho1.jpeg" alt="Pessoa 1">
@@ -59,14 +112,15 @@
                     </div>
                 </div>
             </div>
+
     
 
             <br>
-            <div class="alertas-2">
-                <div class="fav-2">
+            <div class="alertas" id="alerta">
+                <div class="fav" id="favImage2">
                     <img src="./imagens/logo python.png" alt="">
                 </div>
-                <div class="text-2">
+                <div class="text" id="alertText2">
                     <h3>Ilustração de Templates</h3>
                     <h6>8:00 AM - 4:00 PM</h6>
 
@@ -87,12 +141,13 @@
                 </div>
 
             </div>
+            
             <br>
-            <div class="alertas-2">
-                <div class="fav-2">
+            <div class="alertas" id="alerta">
+                <div class="fav" id="favImage3">
                     <img src="./imagens/logo python.png" alt="">
                 </div>
-                <div class="text-2">
+                <div class="text" id="alertText3">
                     <h3>Ilustração de Templates</h3>
                     <h6>8:00 AM - 4:00 PM</h6>
 
@@ -111,6 +166,10 @@
                         <span class="name">Gabriel</span>
                     </div>
                 </div>
+
+            </div>
+            <div id="no-events-message" class="no-events">
+                <h1>Nada na Agenda</h1>
 
             </div>
 
@@ -183,16 +242,75 @@
 
         </div>
         <div class="projeto">
-            <h1>Projeto</h1>
+            <div class="titulo-projeto">
+                <h1>Projeto </h1>
+
+            </div>
+            <div class="back">
+                <div class="progresso">
+                    <h3>Ilustração Template</h3>
+                    <div>
+                    <img src="./imagens/icons-github-.png" alt="" class="icon-progresso">
+                    <img src="./imagens/icons-github-.png" alt="" class="icon-progresso">
+                    </div>
+                </div>
+                <div class="projeto-grafico">
+                    <div class="grafico">
+                        <canvas id="pizza" class="pizza"></canvas>
+
+                    </div>
+                    <div id="legendContainer">
+                        <ul class="custom-legend"></ul>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
 
         </div>
         <div class="files">
-            <h1>Arquivos</h1>
+            <div class="view">
+                <h1>Arquivos</h1>
+                <h3>Todos -></h3>
+            </div>
+            <br>
+            <div class="arquivos">
+                <div class="fav-arquivos">
+                    <img src="./php/imagens/desenho1.jpeg" alt="">
+                </div>
+                <div class="text-arquivos">
+                    <h3>Ilustração de Templates</h3>
+                    <h6>8:00 AM - 4:00 PM</h6>
 
+                </div>
+            </div>
+            <div class="arquivos">
+                <div class="fav-arquivos">
+                    <img src="./imagens/logo python.png" alt="">
+                </div>
+                <div class="text-arquivos">
+                    <h3>Ilustração de Templates</h3>
+                    <h6>8:00 AM - 4:00 PM</h6>
+
+                </div>
+            </div>
+            <div class="arquivos">
+                <div class="fav-arquivos">
+                    <img src="./imagens/logo python.png" alt="">
+                </div>
+                <div class="text-arquivos">
+                    <h3>Ilustração de Templates</h3>
+                    <h6>8:00 AM - 4:00 PM</h6>
+
+                </div>
+            </div>
         </div>
 
         
     </main>
+    <script src="./js/dash.js"></script>
+    <script src="./js/upload.js"></script>
     
 </body>
 </html>
