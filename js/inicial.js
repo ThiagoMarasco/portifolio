@@ -8,6 +8,18 @@ window.addEventListener('scroll', () => {
     }
 });
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    
+    const main = document.querySelector("main");
+    setTimeout(() => {
+      main.classList.add("fade");
+    }, 150); // Atraso para a classe ser adicionada
+  });
+  
+  
+  
+
 document.addEventListener("DOMContentLoaded", function() {
     const botaoMostrar = document.getElementById("mostrar-conteudo");
     const conteudo = document.getElementById("conteudo");
@@ -25,20 +37,5 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const conteudo = document.getElementById("fase-1");
-    const conteudo1 = document.getElementById("fase-2");
 
-    conteudo.addEventListener("click", function() {
-        conteudo.classList.toggle('hidden');
-        conteudo1.classList.toggle("hidden");
-    });
-    conteudo1.addEventListener("click", function() {
-        conteudo.classList.toggle('hidden');
-        conteudo1.classList.toggle("hidden");
-    });
-
-
-
-});
 

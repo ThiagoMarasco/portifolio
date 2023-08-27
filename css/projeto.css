@@ -1,0 +1,37 @@
+main{
+    margin-top: 100px;
+}
+
+.selected{
+  margin-top: 2px;
+  margin-left: -2px;
+  position: absolute;
+  width: 95px;
+  height: 30px;
+  background-color: hsla(160, 52%, 71%, .1);
+  border-radius: 20px;
+  animation: moveToRight 1s ease-in-out forwards; 
+  animation-delay: 20ms;
+
+}
+
+
+@keyframes moveToRight {
+  0% {
+      transform: translateX(-192px);
+    
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@media (max-width: 768px) {
+  .selected{
+    width: 47px;
+    height: 18px;
+    margin-top: 0;
+    margin-left: -3px;
+  }
+
+}

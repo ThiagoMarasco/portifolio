@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/reset.css">
     <link rel="stylesheet" type="text/css" href="./css/inicio.css">
     <link rel="stylesheet" type="text/css" href="./css/sobre.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="icon" type="image/png" sizes="32x32" href="./imagens/iconeprincipal.png">
     <title>Thiago Sobre Mim</title>
 </head>
@@ -16,17 +17,16 @@
             <a href="https://www.linkedin.com/in/thiago-marasco/"><li><img src="./imagens/icons-linkedin.png"></img>Linkdin</li></a>
             <a href="https://github.com/ThiagoMarasco"><li><img src="./imagens/icons-github-.png"></img>GitHub</li></a>
             <a href=""><li><img src="./imagens/icons-nova-mensagem.png"></img>Thiago.s.marasco@gmail.com</li></a>
-            
-
         </ul>
-
     </div>
-    
+
+
     <header>
+        
         <nav>
             <ul class="list-nav">
                 <li><a href="./inicial.html">Trabalhos</a></li>
-                <li class="selected">Sobre</li>
+                <a href=""><div class="selected"></div><li>Sobre</li></a>
                 <a href="projetos.html"><li>Projetos</li></a>
                 <a href="index.html"><li>Curriculo</li></a>
                 <a id="mostrar-conteudo"><li>Contato</li></a>
@@ -34,7 +34,7 @@
         </nav>
     </header>
     
-    <main>
+    <main class="fade-in">
         <div class="titulo">
             <h1>Thiago Marasco</h1>
         </div>
@@ -42,12 +42,13 @@
             <div class="box-image">
                 <img src="./imagens/foto_perfil.jpg" alt="Foto de Perfil">
                 <div class="sub-text">
-                    <div style="margin-right: 20px; margin-left: 40px;">
-                        <img src="./imagens/spotify.svg" alt="spotify" style="width: 50px;">
+                    <div class="img-text-perfil">
+                        <img src="https://camo.githubusercontent.com/63371d36886ee658f5a97401f393e1ab1684b2fd3de674b8f5efc7d410b2a3d0/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f57556c706c634d704f43456d5447427442572f67697068792e676966" alt="" style="width: 60px;">
+
                     </div>
                     <div class="text-container">
-                        <p style="font-weight: bold;">Tocando Agora</p>
-                        <p>kendrick lamar HUMBLE.</p>
+                        <p style="font-weight: bold;">Estudando</p>
+                        <p>diagramas de tabela SQL.</p>
 
                     </div>
 
@@ -55,7 +56,7 @@
                 
             </div>
             <div class="box-text">
-                <h1>Sou desenvolvedor trabalho homeoffice de são paulo, brasil.</h1>
+                <h1>Sou desenvolvedor trabalho homeoffice de São Paulo, Brasil.</h1>
                 <p>Um entusiasta da tecnologia com uma paixão pela programação e análise de dados.</p>
                 <p>Tenho experiência em desenvolvimento de aplicações em Java e Python, permitindo-me criar soluções versáteis e eficientes para desafios diversos. </p>
 
@@ -122,7 +123,8 @@
                 <h1>Não Desistir</h1>
                 <br>
                 <p>
-                    A persistência é um traço fundamental no meu percurso. Enfrentando desafios complexos, optei por uma abordagem de "não desistir" ao invés de me render a obstáculos. </p>
+                    A persistência é um traço fundamental no meu percurso. Enfrentando desafios complexos, optei por uma abordagem de "não desistir" ao invés de me render a obstáculos. 
+                </p>
 
             </div>
             <div class="um">
@@ -131,7 +133,8 @@
                 <h1>Persistência</h1>
                 <br>
                 <p>
-                    A persistência é uma qualidade que moldou minha jornada. Enfrentando desafios, mantive-me determinado e focado em alcançar meus objetivos.</p>
+                    A persistência é uma qualidade que moldou minha jornada. Enfrentando desafios, mantive-me determinado e focado em alcançar meus objetivos.
+                </p>
 
             </div>
             <div class="um">
@@ -143,6 +146,71 @@
 
             </div>
             
+        </div>
+
+        <br>
+        <br>
+        <div class="titulo">
+            <h1>Habilidades: </h1>
+        </div>
+        <br>
+ 
+        <div class="ferramentas">
+            <div class="ferramentas-imagens">
+                <div class="imagens-text">
+                    <img src="https://skillicons.dev/icons?i=py" alt="Image Python">
+                    <p>Tenho conhecimento avançado em python trabalhei com diversas bibliotecas e aplicações feitas durante meu estagio e projetos pessoais principalmente com analise de dados e criação de dashboards</p>
+                </div>
+                <div class="imagens-text">
+                    <img src="https://skillicons.dev/icons?i=java" alt="Image Python">
+                    <p>Tenho conhecimento intermediario com estudos durante a faculdade e ja fiz manutenção de sistemas em java e tenho uma base bem consolidade para essa linguagem sendo facil me desenvolver futuramente</p>
+                </div>
+                <div class="imagens-text">
+                    <img src="https://skillicons.dev/icons?i=mysql" alt="Image Python">
+                    <p>Trabalhei bastante com manutenção atualização e alteração de dados e bases em mySQL durante meu estagio cuidava de sistemas onde suas bases eram em SQL fazia requests e tratava os dados para apresentação</p>
+                </div>
+                <div class="imagens-text">
+                    <img src="https://skillicons.dev/icons?i=js" alt="Image Python">
+                    <p>Possuo sólidos conhecimentos em JavaScript, respaldados por estudos aprofundados e uma ampla experiência na utilização de diversas bibliotecas.</p>
+                </div>
+                <div class="imagens-text">
+                    <img src="https://skillicons.dev/icons?i=html" alt="Image Python">
+                    <p>Tenho completo conhecimento em HTML, posso passar qualquer ideia de design do papel para um site com HTML</p>
+                </div>
+                <div class="imagens-text">
+                    <img src="https://skillicons.dev/icons?i=css" alt="Image Python">
+                    <p>Tenho completo conhecimento em CSS, posso criar qualquer design e estilizar uma pagina HTML da forma que quiser.</p>
+                </div>
+            </div>
+            <div class="ferramentas-imagens" style="margin-right: 0;">
+                <div class="imagens-text">
+                    <img src="https://skillicons.dev/icons?i=php" alt="Image Python">
+                    <p>Tenho Conhecimento intermediario em PHP consigo conectar o back-end com o front usando PHP de uma forma limpa e rapida.</p>
+                </div>
+                <div class="imagens-text">
+                    <img src="https://skillicons.dev/icons?i=git,github" alt="Image Python">
+                    <p>
+                        Possuo amplo domínio do Git e GitHub, abrangendo desde os comandos básicos até recursos avançados. Como criação e gerenciamento de branches, resolução de conflitos e rebase.</p>
+                </div>
+                <div class="imagens-text">
+                    <img src="https://skillicons.dev/icons?i=mongodb" alt="Image Python">
+                    <p>Possuo conhecimento intermediário em MongoDB, o que me permite realizar tarefas essenciais de gerenciamento de dados. Tenho habilidade na criação e gestão de coleções, consultas avançadas.</p>
+                </div>
+                <div class="imagens-text">
+                    <img src="https://skillicons.dev/icons?i=django" alt="Image Python">
+                    <p>
+                        Possuo habilidades intermediárias em desenvolvimento web com Django, demonstradas por projetos práticos de criação e manutenção de aplicativos.</p>
+                </div>
+                <div class="imagens-text">
+                    <img src="https://skillicons.dev/icons?i=aws" alt="Image Python">
+                    <p>
+                        Possuo conhecimento intermediário em serviços da AWS, evidenciado pela configuração e gerenciamento de instâncias EC2, criação de buckets S3, implementação de balanceamento de carga com o ELB.</p>
+                </div>
+                <div class="imagens-text">
+                    <img src="https://skillicons.dev/icons?i=autocad" alt="Image Python">
+                    <p>Possuo um profundo conhecimento avançado em AutoCAD, minha competência abrange o domínio de recursos avançados do software, como modelagem 3D, criação de macros e automação de tarefas.</p>
+                </div>
+            </div>
         </div>
 
         <div class="trabalhos">

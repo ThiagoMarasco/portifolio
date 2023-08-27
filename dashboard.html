@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="./css/inicio.css">
     <link rel="stylesheet" type="text/css" href="./css/robods.css">
     <link rel="stylesheet" type="text/css" href="./css/dashboard.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="icon" type="image/png" sizes="32x32" href="./imagens/iconeprincipal.png">
     <title>Thiago RoboDS</title>
 </head>
@@ -25,14 +26,14 @@
             <ul class="list-nav">
                 <li><a href="./inicial.html">Trabalhos</a></li>
                 <a href="sobre.html"><li>Sobre</li></a>
-                <a href="projetos.html"><li class="selected">Projetos</li></a>
+                <a href="projetos.html"><div class="selected"></div><li class="">Projetos</li></a>
                 <a href="index.html"><li>Curriculo</li></a>
                 <a id="mostrar-conteudo"><li>Contato</li></a>
             </ul>
         </nav>
     </header>
     
-    <main>
+    <main class="fade-in">
         <div class="titulo">
             <h1>Dashboard.</h1>
         </div>
@@ -129,5 +130,6 @@
     </footer>
     
     <script src="./js/inicial.js"></script>
+    <script src="./js/dashboard.js"></script>
 </body>
 </html>
