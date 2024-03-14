@@ -98,40 +98,37 @@
     
     <main class="fade-in">
         <div class="titulo">
-            <h1>Catalogador </h1>
+            <h1>Sayuri Studio </h1>
         </div>
         <div class="sub-titulo">
             <div class="base">
                 <h1>TimeLine</h1>
-                <p>2023 - Presente</p>
+                <p>2024 - Presente</p>
             </div>
             <div class="base">
                 <h1>Projeto</h1>
-                <p>Banco Rendimento</p>
+                <p>Freelancer</p>
             </div>
             <div class="base">
                 <h1>Ferramentas</h1>
-                <p>.NET, Bootstrap, SQL Server, Azure</p>
+                <p>Python, Django, MYSQL, AWS</p>
             </div>
         </div>
         <div class="exemplo1">
-            <img src="https://powerbiexperience.com/wp-content/uploads/2020/04/2020-04-10-10_36_52-Curso-Express-de-Power-BI-Power-BI-Desktop-1024x574.png" alt="Dashboard">
+            <img src="..\imagens\sayuri_studio.png" alt="Dashboard">
         </div>
 
         <div class="subtitulo">
             <h1 class="tituloh1">Visão Geral</h1>
             <p>
-                Em colaboração com uma equipe de três profissionais,
-                desenvolvemos um website destinado à visualização
-                abrangente das informações de todos os servidores da empresa.
+                Desenvolvi um website sofisticado para um estúdio de tatuagem, com ênfase especial no design elegante e na funcionalidade intuitiva.
+                O ponto alto deste projeto é a integração de um sistema de agendamento otimizado, projetado para proporcionar uma experiência de usuário fluida e sem complicações.
+                Através desta plataforma, os clientes podem facilmente marcar seus horários, enquanto um recurso inovador permite a visualização e confirmação de agendamentos diretamente pelo WhatsApp.
             </p>
             <br>
             <p>
-                Este site oferece uma visão detalhada das permissões,
-                estrutura das informações e histórico de alterações,
-                permitindo um controle eficaz sobre o gerenciamento
-                de dados e monitoramento das ações realizadas alem
-                de catalogador informações para reuso. 
+                O website foi estrategicamente dividido em duas versões distintas: uma destinada aos usuários e outra aos funcionários, assegurando que cada grupo tenha acesso apenas às funcionalidades relevantes para suas necessidades. A integração com o WhatsApp, realizada através do Twilio, centraliza o controle da agenda, permitindo o cancelamento e a confirmação de agendamentos de maneira eficiente e diretamente pela plataforma.
+
             </p>
         </div>
         <br>
@@ -139,11 +136,11 @@
             <h1 class="tituloh1" style="margin-top: 100px">Ferramentas:</h1>
 
             <div class="imagens-sub">
-                <img src="https://skillicons.dev/icons?i=dotnet" alt="DotNet" data-info="O .NET foi fundamental neste projeto de desenvolvimento de um website para visualizar informações de servidores da empresa. Ele possibilitou a criação de uma aplicação web segura, com recursos avançados de autenticação e permissões, integração eficiente com bancos de dados, e construção da parte frontend interativa. O .NET desempenhou um papel essencial no controle de governança de dados e monitoramento de alterações, garantindo uma visão detalhada e eficaz das informações dos servidores.">
+                <img src="https://skillicons.dev/icons?i=aws" alt="AWS" data-info="O AWS foi fundamental para escalabilidade e hospedagem do projeto">
                 
-                <img src="https://skillicons.dev/icons?i=mysql" alt="Sql Server" data-info="O SQL Server foi crucial neste projeto, atuando como o banco de dados principal para armazenar as informações dos servidores da empresa. Ele possibilitou a organização, recuperação e manipulação eficiente dos dados. Além disso, o SQL Server desempenhou um papel central na segurança e na integridade dos dados, garantindo que as informações fossem acessadas de maneira segura e confiável. Isso contribuiu para o sucesso do projeto em fornecer uma visão abrangente e confiável das informações dos servidores.">
-                <img src="https://skillicons.dev/icons?i=azure" alt="Azure"  data-info="O Azure, da Microsoft, teve um impacto vital neste projeto, fornecendo uma plataforma de nuvem confiável para hospedar a aplicação web e o banco de dados. Isso permitiu escalabilidade, alta disponibilidade e segurança avançada para as informações dos servidores. Além disso, o Azure ofereceu recursos de monitoramento e gerenciamento que auxiliaram no controle eficaz e na governança de dados. Sua contribuição foi fundamental para garantir um ambiente de hospedagem robusto e seguro para o projeto.">
-                <img src="https://skillicons.dev/icons?i=bootstrap" alt="BootStrap" style="margin-right: 0;" data-info="O Bootstrap desempenhou um papel crucial na criação da interface do usuário deste projeto. Esta estrutura permitiu o desenvolvimento de um frontend responsivo e esteticamente agradável, garantindo que o website fosse acessível em diversos dispositivos e navegadores. Além disso, o Bootstrap simplificou a implementação de elementos de design, melhorando a experiência do usuário e tornando a navegação intuitiva. Sua contribuição foi fundamental para o sucesso do projeto, proporcionando uma interface amigável e eficaz.">
+                <img src="https://skillicons.dev/icons?i=mysql" alt="MYSQL" data-info="O MYSQL foi escolhido por se encaixar melhor no projeto e trazer uma visualizar dos dados atraves da sua interface simples">
+                <img src="https://skillicons.dev/icons?i=django" alt="Django"  data-info="Principal framework utilizado sendo o coracao do projeto desde segurança ate frond e back-end">
+                <img src="https://skillicons.dev/icons?i=python" alt="Python" style="margin-right: 0;" data-info="O python foi a linguagem escolhida por ter otimos framework para o projeto especifico e tambem tem serviços de integração de dados otimos">
                   
             </div>
             </div>
@@ -156,20 +153,22 @@
         <div class="subtitulo">
             <h1 class="tituloh1" style="margin-top: 100px">Desafios</h1>
             <p>
-            Um dos desafios desse projeto foi a integração de diversas tecnologias e sistemas, incluindo .NET, Bootstrap, SQL Server e Azure. Isso exigiu uma coordenação eficaz entre diferentes membros da equipe para garantir que todas as partes funcionassem harmoniosamente.
+                A integração foi realizada utilizando a API do Twilio para WhatsApp. Implementei webhooks para capturar eventos de agendamento e disparar mensagens automáticas, como confirmações e lembretes de agendamento, diretamente do sistema para o WhatsApp dos clientes.
+                
             </p>
             <br>
             <p>
-            Além disso, o gerenciamento de permissões e governança de dados também foi um desafio significativo. Garantir que apenas pessoas autorizadas tivessem acesso às informações críticas dos servidores, ao mesmo tempo em que permitia a colaboração eficiente, envolveu a implementação de sistemas de segurança robustos e estratégias de controle de acesso.
+
+            
+                Implementei um sistema robusto de autenticação e autorização utilizando Django. Isso incluiu o uso de grupos de usuários e permissões específicas para separar claramente o acesso às funcionalidades do site, com base no papel de cada usuário.
             </p>
             <br>
-            <p>
-            A escalabilidade e o desempenho do sistema, especialmente ao lidar com grandes volumes de dados de servidores, também podem ter representado um desafio, exigindo otimização cuidadosa.
+             <p>
+                
+                A escolha da AWS EC2 como plataforma de hospedagem permitiu aproveitar os benefícios da escalabilidade. Configurei instâncias EC2 para escalarem automaticamente, ajustando-se à demanda e garantindo um desempenho estável. Além disso, otimizei as configurações do servidor Django e o banco de dados MySQL para eficiência.
+                
             </p>
-            <br>
-            <p>
-                Finalmente, a manutenção e atualização contínua da aplicação para atender às necessidades em constante evolução da empresa podem ser consideradas desafios adicionais a longo prazo.
-            </p>
+           
         </div>
     </main>
     

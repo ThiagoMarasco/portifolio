@@ -58,7 +58,10 @@ a{
     display: flex;
     max-width: 1250px;
 }
-
+.fade-in {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
 main{
     margin-top: 100px;
 }

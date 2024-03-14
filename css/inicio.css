@@ -11,6 +11,20 @@ html, body {
 
 }
 
+/* Estado inicial dos itens: transparentes e ligeiramente deslocados para cima */
+.item-animate {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease-out;
+}
+
+/* Estado final: totalmente visível e na posição original */
+.item-animate-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 .fade-in {
     opacity: 0;
     transition: opacity 1s ease;
@@ -20,28 +34,106 @@ html, body {
     opacity: 1;
 }
   
-  
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% ;
+  }
+  25% {
+    background-position: 50% ;
+  }
+  50% {
+    background-position: 100% ;
+  }
+  75% {
+    background-position: 50% ;
+  }
+  100% {
+    background-position: 0%;
+  }
 
-body {
-    background: linear-gradient(300deg,#1d3635,#335e5b,#3a3f3f);
-    background-size: 180% 180%;
-    animation: gradient-animation 10s ease infinite;
+
+
+
+}
+
+body{
+    background: linear-gradient(300deg, #042711, #105252, #091d27);
+    animation: gradient-animation 3s ease infinite;
     display: flex;
     flex-direction: column;
+
 }
 
-  
-@keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+ body.dark-mode {
+  background: linear-gradient(300deg, #042711, #105252, #091d27);
+  background-size: 300% 300%;
+  animation: gradient-animation 3s ease infinite;
 }
+
+ body.light-mode {
+    background: linear-gradient(300deg, #4ec77a, #b3c453, #5ba5ca);
+    background-size: 300% 300%;
+    animation: gradient-animation 3s ease infinite;
+
+  }
+
+#theme-switch-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+  }
+  
+  .theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+  }
+  
+  .theme-switch input {
+    display: none;
+  }
+  
+  .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    background-color: white;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+  }
+  
+  input:checked + .slider {
+    background-color: #66bb6a;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  
 
 
 header {
@@ -126,9 +218,6 @@ nav.scrolled {
 
 
 
-
-
-
 main {
     justify-content: center;
     align-items: center;
@@ -154,14 +243,15 @@ main {
 .titulo h1:hover {
     font-size: 128px;
 }
-
+/* Cards na tela */
 .trabalhos {
-    color: #1a1a29;
-    margin-top: 130px;
+    color: #000000;
+    margin-top: 8vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     max-width: 100%;
+
 }
 
 .card-1, .card-2, .card-3, .card-4 {
@@ -173,51 +263,67 @@ main {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    width: 100%;
 }
 
 .trabalhos img{
     object-fit: contain;
-    width: 1200px;
-    height: 1200px;
+    width: 1300px;
+    height: 1300px;
     border-radius: 50px;
 }
 
-.card-1 {
-    background-color: #bfe0b3;
-    max-width: 576px;
-    max-height: 550px;
-    margin-right: 64px; 
-    
 
+
+.trabalhos .card-image {
+    transition: transform 0.5s ease;
 }
 
-.card-1:hover,.card-2:hover,.card-3:hover,.card-4:hover{
-    transform: scale(1.1);
+.trabalhos .card-1:hover img, 
+.trabalhos .card-2:hover img, 
+.trabalhos .card-3:hover img, 
+.trabalhos .card-4:hover img {
+    transform: scale(0.7) translate(0%, -10%);
+    max-width: none;
+    max-height: none;
+    width: auto;
+    height: auto;
+}
 
+.trabalhos {
+    transition: opacity 0.5s ease;
+    opacity: 1; /* Estado padrão */
+}
+
+.card-1 {
+    background-color: rgba(207, 148, 229, 0.9);
+    max-width: 30vw; /* Convertido de 576px */
+    max-height: 51vh; /* Convertido anteriormente */
+    margin-right: 64px; /* Considere converter isto também se desejar um layout totalmente responsivo */
 }
 
 .card-2 {
-    background-color: #e79adc;
-    max-width: 960px;
-    max-height: 550px;
+    background-color: rgb(163 220 212); /* Uma cor mais brilhante baseada em #e79adc */
+    max-width: 50vw; /* Convertido de 960px */
+    max-height: 51vh; /* Ajuste baseado na conversão anterior */
 }
 
 .card-3 {
-    background-color: #e0a8a8;
-    max-width: 960px;
-    max-height: 550px;
-    margin-right: 64px;
+    background-color: hsla(22, 62%, 76%, 1);
+    max-width: 50vw; /* Convertido de 960px */
+    max-height: 51vh; /* Ajuste baseado na conversão anterior */
+    margin-right: 64px; /* Considere converter isto também */
 }
 
 .card-4 {
-    background-color: #7fd0df;
-    max-width: 576px;
-    max-height: 550px;
+    background-color: hsla(206, 84%, 86%, 1);
+    max-width: 30vw; /* Convertido de 576px */
+    max-height: 51vh; /* Ajuste baseado na conversão anterior */
 }
 
 .card-1 img{
     width: 1300px;
-}
+} 
 
 .titulo2 {
     margin-top: 130px;
@@ -230,7 +336,7 @@ footer{
     line-height: 50px;
     color: hsla(159, 42%, 88%, 1);
     margin-top: 200px;
-    align-items: center;
+
     justify-content: center;
     max-width: 100%;
     max-height: 100%;
@@ -258,25 +364,121 @@ footer h1{
 
 
 .barra-magica{
-    vertical-align: middle;
+
     position: fixed;
-    bottom: 100px;
-    width: 86%;
-    padding: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
-    max-height: 150px;
-    background:hsla(140, 1%, 42%, 0.404);
-    border-radius: 40px;
-    backdrop-filter: blur(20px) saturate(1.7);
+    right: 6vh;
+    bottom: 4vh;
+    max-width: 348px;
+    max-height: 100%;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 30px;
     cursor: pointer;
     z-index: 999;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%); /* Inicialmente fora da tela */
+    transition: transform 1.2s ease; /* Suaviza a transição do transform */
+
+}
+.barra-magica.aberta {
+    transform: translateX(0); /* Move a barra para sua posição original */
+}
+
+.head-mobile{
+
+    font-size: 16px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    color: hsla(158, 23%, 18%, 1);
+
+    background-color: hsla(160, 52%, 71%, 1);
+    border-radius:  30px 30px 0 0;
+
+    
+}
+
+
+.head-mobile img{
+
+    border-radius: 100%;
+    padding: 15px;
+
+}
+.head-mobile h1{
+    font-size: 16px;
+    margin-left:0px;
+    font-weight: bold;
+}
+.head-mobile h3{
+    font-size: 16px;
+    font-weight:lighter;
 
 }
 
+
+.centro-mobile{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: hsl(158deg 23% 18% / 70%);
+    max-height: 526px;
+    overflow: auto;
+    border-radius: 0 0 20px 20px;
+    border: 1px solid hsla(160, 52%, 71%, 1) !important;
+    line-height: 1.5;
+    backdrop-filter: blur(40px) saturate(1.3);
+    box-shadow: rgba(0, 0, 0, .15);
+
+}
+
+.centro-text-mobile{
+    display: flex;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    max-width: 100%;
+    max-width: 348px; /* Esta linha está sobrescrevendo a declaração anterior de max-width: 100%; */
+    background: hsl(160deg 52% 71% / 10%);
+    box-sizing: border-box;
+}
+
+.centro-text-mobile p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding não aumente o tamanho do elemento */
+    max-width: 100%; /* Limita a largura máxima sem especificar uma largura fixa */
+}
+
+.hold-botao-self{
+    padding: 16px 24px;
+    border-radius: 42px;
+    background: transparent;
+    border: 2px solid hsla(160, 52%, 71%, 1) ;
+    color: hsla(160, 52%, 71%, 1);
+    margin-bottom: 15px;
+}
+.hold-botao-self:hover{
+    color: rgb(255, 255, 255);
+    
+    background: hsla(160, 52%, 71%, 1);
+
+}
+
+.button-text:hover{
+    color: rgb(255, 255, 255);
+    
+    background: hsla(160, 52%, 71%, 1);
+
+}
+
+
+.button-text{
+    color: hsla(160, 52%, 71%, 1);
+
+}
 
 @media (max-width: 768px) {
 
@@ -293,11 +495,11 @@ footer h1{
     header {
         font-size: 16px;
         flex-direction: column;
-        font-family: serif;
+
     }
 
     .list-nav li {
-        font-size: 12px;
+        font-size: 14px;
         gap: 6px;
         padding: 2px; /* Reduz o espaçamento interno dos itens de navegação */
     }
@@ -333,9 +535,11 @@ footer h1{
 
     .trabalhos img{
         object-fit: contain;
-        max-width: inherit;
-        width: 100%;
-        height: 100%;
+        max-width: 540px;
+        max-height: 540px;
+        width: 150%;
+        height: 150%;
+
     
     }
     .titulo2{
@@ -347,7 +551,13 @@ footer h1{
         height: auto; /* Ajusta a altura automaticamente */
         margin: 0px; /* Remove a margem à direita em telas menores */
         margin-bottom: 20px;
-         /* Adiciona margem inferior para separar os cartões */
+        max-width: none;
+        max-height: none;
+        padding: 15px;
+        justify-content: center;
+        align-items: center;
+        text-justify: auto;
+        overflow: hidden;
         
     }
     .barra-magica{
@@ -355,11 +565,15 @@ footer h1{
         margin: 5px;
     }
     .selected{
-        width: 57px;
-        height: 18px;
+        width: 76px;
+        height: 22px;
         margin-top: 0;
         margin-left: -3px;
       }
+
+    #theme-switch-wrapper{
+        display: none;
+    }
 
 
 }

@@ -32,7 +32,6 @@ main {
   padding: 20px;
   background: #327471;
 
-  border-radius: 5px;
   color: hsla(159, 42%, 88%, 1);
   padding: 1.75rem;
   transition: 0.4s ease;
@@ -82,7 +81,7 @@ main {
   margin-top: 2px;
   margin-left: -2px;
   position: absolute;
-  width: 75px;
+  width: 103px;
   height: 30px;
   background-color: hsla(160, 52%, 71%, .1);
   border-radius: 20px;
@@ -143,12 +142,13 @@ main {
 .box-image h4, .box-image p {
     color: rgb(22, 22, 31);
 }
+.img-foto-box{
+  width: 384px;
+  height: 384px;
+  border-radius: 200px 200px 0 0;
 
-.box-image img {
-    
-    width: 384px;
-    border-radius: 200px 200px 0 0;
 }
+
 
 .box-text {
     margin-top: 56px;
@@ -246,27 +246,16 @@ font-size: 22px;
 
 }
 
-.card-1:hover{
-  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
-  
-  overflow: visible;
+.card-1:hover  .card-2:hover {
+  padding: none;
 
 }
-.card-2:hover{
-  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
-  max-height: 1200px;
 
-  height: 1200px;
-  overflow: visible;
-
-}
 
 .trabalhos img{
-
-  width: 100%;
-
-
+  width: auto;
 }
+
 .ferramentas{
   display: flex;
   max-width: 100%;
@@ -472,6 +461,12 @@ font-size: 22px;
   height: 18px;
   margin-top: 0;
   margin-left: -3px;
+}
+
+.img-foto-box{
+  width: 35.56vh;
+  height: 35.56vh;
+
 }
 
 }

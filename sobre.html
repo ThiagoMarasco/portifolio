@@ -6,18 +6,76 @@
     <link rel="stylesheet" type="text/css" href="./css/reset.css">
     <link rel="stylesheet" type="text/css" href="./css/inicio.css">
     <link rel="stylesheet" type="text/css" href="./css/sobre.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <link rel="icon" type="image/png" sizes="32x32" href="./imagens/iconeprincipal.png">
     <title>Thiago Sobre Mim</title>
 </head>
 <body>
     <div class="barra-magica" id="conteudo" style="display: none;">
 
-        <ul class="list-nav">
-            <a href="https://www.linkedin.com/in/thiago-marasco/"><li><img src="./imagens/icons-linkedin.png"></img>Linkdin</li></a>
-            <a href="https://github.com/ThiagoMarasco"><li><img src="./imagens/icons-github-.png"></img>GitHub</li></a>
-            <a href=""><li><img src="./imagens/icons-nova-mensagem.png"></img>Thiago.s.marasco@gmail.com</li></a>
-        </ul>
+        <div class="head-mobile">
+            <img src="./imagens/foto perfil.jpg" alt="Foto de Perfil" style="width: 50px; height: 50px;">
+            <div style="display: flex; flex-direction: column;"> 
+            <h1>Thiago BOT</h1>
+            
+            <h3>Me faca uma pergunta</h3>
+            </div>
+            
+
+            <a id="ocultar-conteudo"><img width="48" height="48" src="https://img.icons8.com/fluency-systems-filled/48/delete-sign.png" alt="delete-sign"/></a>
+            
+        </div>
+
+        <div class="centro-mobile">
+
+            <div class="centro-text-mobile">
+                <p>
+                    Ola!
+                </p>
+
+            </div>
+
+            <div class="centro-text-mobile">
+                <p>
+                    Eu sou o Thiago Bot. <br>
+                    Eu estou aqui para ajudar voce com qualquer pergunta
+                    sobre o trabalho do Thiago.
+                
+                </p>
+                
+
+            </div>
+
+            <div class="centro-text-mobile">
+                <p>
+                   como eu posso te ajudar hoje?
+                </p>
+
+            </div>
+            <div style="margin-bottom: 20px;">
+
+            </div>
+
+            <div class="botao-holder">
+                <div class="hold-botao-self" id="midias-sociais">
+                    <button class="button-text" > Queria saber mais sobre suas midias sociais</button>
+    
+                </div>
+                <div class="hold-botao-self" id="apenas-olhando">
+                    <button class="button-text" > Curriculo</button>
+    
+                </div>
+    
+                <div class="hold-botao-self" id="contratar">
+                    <button class="button-text" > Gostaria de te contratar</button>
+    
+                </div>
+    
+    
+            </div>
+
+        </div>
+
     </div>
 
 
@@ -25,14 +83,21 @@
         
         <nav>
             <ul class="list-nav">
-                <li><a href="./inicial.html">Trabalhos</a></li>
-                <a href=""><div class="selected"></div><li>Sobre</li></a>
+                <li><a href="./index.html">Trabalhos</a></li>
+                <a href=""><div class="selected"></div><li>Curriculo</li></a>
                 <a href="projetos.html"><li>Projetos</li></a>
-                <a href="index.html"><li>Curriculo</li></a>
+                <a href="index.html"><li>Sobre</li></a>
                 <a id="mostrar-conteudo"><li>Contato</li></a>
             </ul>
         </nav>
     </header>
+    <div id="theme-switch-wrapper" class="item-animate">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" checked/>
+            <div class="slider round"></div>
+        </label>
+    </div>
+
     
     <main class="fade-in">
         <div class="titulo">
@@ -40,10 +105,11 @@
         </div>
         <div class="descricao">
             <div class="box-image">
-                <img src="./imagens/foto_perfil.jpg" alt="Foto de Perfil">
+
+                <img src="./imagens/Foto Perfil.jpg" alt="Foto de Perfil" class="img-foto-box">
                 <div class="sub-text">
                     <div class="img-text-perfil">
-                        <img src="https://camo.githubusercontent.com/63371d36886ee658f5a97401f393e1ab1684b2fd3de674b8f5efc7d410b2a3d0/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f57556c706c634d704f43456d5447427442572f67697068792e676966" alt="" style="width: 60px;">
+                        <img src="/imagens/cat-pet.gif" alt="" style="width: 60px;">
 
                     </div>
                     <div class="text-container">
@@ -58,7 +124,7 @@
             <div class="box-text">
                 <h1>Sou desenvolvedor trabalho homeoffice de São Paulo, Brasil.</h1>
                 <p>Um entusiasta da tecnologia com uma paixão pela programação e análise de dados.</p>
-                <p>Tenho experiência em desenvolvimento de aplicações em Java e Python, permitindo-me criar soluções versáteis e eficientes para desafios diversos. </p>
+                <p>Tenho experiência em desenvolvimento de aplicações em Java e Python, permitindo-me criar soluções versáteis e eficientes para diversos desafios. </p>
 
             </div>
         </div>
@@ -80,16 +146,21 @@
                                    <div class="timeline-circle"></div>
                                </div>
                                <div class="timeline-component timeline-content">
-                                <h3>Freelancer 2021</h3>
+                                <h3>Banco Rendimento 2023 -</h3>
+                                <h3>Arquiteto De Dados Pleno</h3>
                                 <br>
                                 <p>
-                                     Iniciei minha jornada como freelancer com o objetivo
-                                     de adquirir experiência prática e desenvolver habilidades relevantes 
-                                     antes de buscar oportunidades de estágio. Essa abordagem me permitiu
-                                     não apenas aprofundar meu conhecimento técnico, mas também aprender
-                                     a lidar com projetos do início ao fim, desde a comunicação com clientes
-                                     até a entrega de soluções de alta qualidade.
+                                    Atualmente, atuo como Arquiteto de Dados, focando na governança de dados
+                                    e sistemas, com ênfase no ecossistema Microsoft Azure. Minha principal
+                                    responsabilidade envolve o desenvolvimento de sistemas para catalogar 
+                                    informações de servidores, abrangendo desde dados essenciais até campos
+                                    de metadados. Além disso, trabalho para aprimorar continuamente a eficiência e a segurança dos sistemas,
+                                    apresentando métodos práticos e soluções eficazes. Minha abordagem visa
+                                    garantir que todas as soluções sejam desenvolvidas de maneira segura,
+                                    eficiente e prática, ao mesmo tempo em que promovo as melhores práticas
+                                    em governança de dados.
                                 </p>
+
                            </div>
                                 <div class="timeline-component timeline-content">
                                          <h3>Itau Unibanco 2021 - 2023</h3>
@@ -119,20 +190,17 @@
                                    <div class="timeline-circle"></div>
                                </div>
                                <div class=" timeline-component timeline-content">
-                                <h3>Banco Rendimento 2023 -</h3>
-                                <h3>Arquiteto De Dados Pleno</h3>
+                                <h3>Freelancer 2021</h3>
                                 <br>
                                 <p>
-                                    Atualmente, atuo como Arquiteto de Dados, focando na governança de dados
-                                    e sistemas, com ênfase no ecossistema Microsoft Azure. Minha principal
-                                    responsabilidade envolve o desenvolvimento de sistemas para catalogar 
-                                    informações de servidores, abrangendo desde dados essenciais até campos
-                                    de metadados. Além disso, trabalho para aprimorar continuamente a eficiência e a segurança dos sistemas,
-                                    apresentando métodos práticos e soluções eficazes. Minha abordagem visa
-                                    garantir que todas as soluções sejam desenvolvidas de maneira segura,
-                                    eficiente e prática, ao mesmo tempo em que promovo as melhores práticas
-                                    em governança de dados.
+                                     Iniciei minha jornada como freelancer com o objetivo
+                                     de adquirir experiência prática e desenvolver habilidades relevantes 
+                                     antes de buscar oportunidades de estágio. Essa abordagem me permitiu
+                                     não apenas aprofundar meu conhecimento técnico, mas também aprender
+                                     a lidar com projetos do início ao fim, desde a comunicação com clientes
+                                     até a entrega de soluções de alta qualidade.
                                 </p>
+
                            </div>
                 
                        </div>
