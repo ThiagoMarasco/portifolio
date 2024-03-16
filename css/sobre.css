@@ -239,12 +239,7 @@ font-size: 22px;
   font-size: 24px;
 }
 
-.trabalhos,.card-1,.card-2{
 
-  padding: 0px;
-
-
-}
 
 .card-1:hover  .card-2:hover {
   padding: none;
@@ -252,9 +247,6 @@ font-size: 22px;
 }
 
 
-.trabalhos img{
-  width: auto;
-}
 
 .ferramentas{
   display: flex;
@@ -303,6 +295,94 @@ font-size: 22px;
   
 
 }
+
+.trabalhos,.card-1,.card-2{
+
+  padding: 0px;
+
+
+}
+
+.trabalhos img{
+  width: auto;
+}
+
+.imagens-fundo{
+  display: flex;
+  margin-top: 150px;
+  justify-content: center;
+  align-items: center;
+  max-height: 605px;
+  
+}
+
+.fotos-1{
+
+  margin-right: 19px;
+  max-height: 605px;
+  display: flex;
+  width: 85vh;
+
+}
+.fotos-2{
+
+  max-height: 605px;
+  display: flex;
+
+}
+
+.fotos-1 img{
+  display: flex;
+  border-radius: 2.5%;
+  height: 100%;
+  width: 100%;
+
+}
+
+.fotos-2 img{
+  display: flex;
+  border-radius: 4%;
+  height: 100%;
+  width: 100%;
+
+}
+.tag-img{
+  position: relative;
+}
+.imagens-fundo > div {
+  position: relative;
+  display: inline-block; /* Para alinhar as imagens lado a lado, se necessário */
+}
+
+/* Faz com que a tag-img seja inicialmente invisível */
+.tag-img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #233831;
+  color: white;
+  visibility: hidden; /* Esconde inicialmente */
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear; /* Transição suave */
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.tag-img h1{
+  font-size: 18px;
+  color: rgb(195, 209, 204);
+  
+
+}
+
+.fotos-1:hover .tag-img,
+.fotos-2:hover .tag-img {
+  visibility: visible; /* Torna visível ao passar o mouse */
+  opacity: 1;
+}
+
 
 @media(min-width: 768px){
 
@@ -468,6 +548,47 @@ font-size: 22px;
   height: 35.56vh;
 
 }
+
+.imagens-fundo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.fotos-1{
+  margin: 0;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+}
+
+.fotos-1 img{
+  width: 250px;
+  height: 250px;
+
+}
+
+.fotos-2 img{
+  width: 250px;
+  height: 250px;
+
+}
+
+.sub-text h1, p{
+  font-size: 12px;
+}
+
+
+
+.design-section{
+  padding: 0px;
+}
+
 
 }
 

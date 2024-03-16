@@ -162,9 +162,9 @@ nav{
 
 /* Estilos para o fundo da navegação quando a página é rolada */
 nav.scrolled {
-    
+    background-color: #07362454;
     border-radius: 40px;
-    backdrop-filter: blur(20px) saturate(1.3);
+    backdrop-filter: blur(40px) saturate(1.3);
 }
 
 
@@ -240,9 +240,7 @@ main {
 .titulo h1 {
     font-size: 128px;
 }
-.titulo h1:hover {
-    font-size: 128px;
-}
+
 /* Cards na tela */
 .trabalhos {
     color: #000000;
@@ -279,15 +277,18 @@ main {
     transition: transform 0.5s ease;
 }
 
-.trabalhos .card-1:hover img, 
-.trabalhos .card-2:hover img, 
-.trabalhos .card-3:hover img, 
-.trabalhos .card-4:hover img {
-    transform: scale(0.7) translate(0%, -10%);
-    max-width: none;
-    max-height: none;
-    width: auto;
-    height: auto;
+/* Estilos aplicados apenas se a largura da tela for maior que 768px */
+@media (min-width: 769px) {
+    .trabalhos .card-1:hover img, 
+    .trabalhos .card-2:hover img, 
+    .trabalhos .card-3:hover img, 
+    .trabalhos .card-4:hover img {
+        transform: scale(0.7) translate(0%, -10%);
+        max-width: none;
+        max-height: none;
+        width: auto;
+        height: auto;
+    }
 }
 
 .trabalhos {
