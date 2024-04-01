@@ -34,48 +34,60 @@ html, body {
     opacity: 1;
 }
   
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% ;
-  }
-  25% {
-    background-position: 50% ;
-  }
-  50% {
-    background-position: 100% ;
-  }
-  75% {
-    background-position: 50% ;
-  }
-  100% {
-    background-position: 0%;
-  }
+body {
 
-
-
-
-}
-
-body{
-    background: linear-gradient(300deg, #042711, #105252, #091d27);
-    animation: gradient-animation 3s ease infinite;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+   
 
 }
 
+body::before {
+    content: "";
+
+    top: -50%; /* Aumentar o tamanho para garantir cobertura total com blur */
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    z-index: -1;
+    background: radial-gradient(circle, #03220e, #110202b6, #042714, #05121ad5);
+    background-size: 200% 200%;
+    animation: gradient-animation 10s linear infinite;
+    filter: blur(30px);
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 100%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 0%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+  
  body.dark-mode {
-  background: linear-gradient(300deg, #042711, #105252, #091d27);
-  background-size: 300% 300%;
-  animation: gradient-animation 3s ease infinite;
+    content: "";
+
+    top: -50%; /* Aumentar o tamanho para garantir cobertura total com blur */
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    z-index: -1;
+    background: radial-gradient(circle, #03220e, #03201d, #051d10, #350a0ad5);
+    background-size: 200% 200%;
+    animation: gradient-animation 10s linear infinite;
 }
 
- body.light-mode {
-    background: linear-gradient(300deg, #4ec77a, #b3c453, #5ba5ca);
-    background-size: 300% 300%;
-    animation: gradient-animation 3s ease infinite;
+body.light-mode {
+    background: radial-gradient(circle, #13ad49, #c71d1db6, #13b15a, #1d74aad5);
+    background-size: 200% 200%;
+    animation: gradient-animation 10s ease infinite;
 
-  }
+}
 
 #theme-switch-wrapper {
     position: fixed;
