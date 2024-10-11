@@ -1,0 +1,166 @@
+trigger:
+- '*'
+
+stages:
+
+# 1. Estágio de DEV com aprovação do usuário que fez o commit
+- stage: DEV
+  jobs:
+  - job: AprovarDev
+    steps:
+    - task: PowerShell@2
+      displayName: 'Aprovação Automática para DEV'
+      inputs:
+        targetType: 'inline'
+        script: |
+          Write-Host "Esperando aprovação do usuário que fez o commit..."
+      environment:
+        name: 'DEV'
+        resourceName: 'Nome-Recurso-DEV'
+        approvals:
+          - name: 'Aprovação DEV'
+            approvers:
+              - $(Build.RequestedFor) # Aprovador é o autor do commit
+
+# 2. Estágio de HML com validação de grupo e aprovação de PR
+- stage: HML
+  dependsOn: DEV
+  condition: succeeded()
+  jobs:
+  - job: ValidacaoHML
+    steps:
+    - task: PowerShell@2
+      displayName: 'Validar grupo autorizador'
+      inputs:
+        targetType: 'inline'
+        script: |
+          Write-Host "Validando grupo autorizador para HML..."
+    - task: AzurePowerShell@5
+      displayName: 'Validação de PR e iniciar deploy HML'
+      inputs:
+        azureSubscription: 'Sua-Subscrição'
+        scriptType: 'inlineScript'
+        inline: |
+          Write-Host "Iniciando deploy para HML após aprovação de PR..."
+
+# 2.1 Estágio de Criação de Release no ServiceNow
+- stage: CriarRelease
+  dependsOn: HML
+  condition: succeeded()
+  jobs:
+  - job: CriarReleaseServiceNow
+    steps:
+    - powershell: |
+        $serviceNowInstance = "$(ServiceNowInstance)"
+        $user = "$(ServiceNowUser)"
+        $password = "$(ServiceNowPassword)"
+        $authInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("$($user):$($password)"))
+
+        # Variáveis da pipeline do Azure DevOps
+        $repoName = "$(Build.Repository.Name)"
+        $branchName = "$(Build.SourceBranchName)"
+        $commitUser = "$(Build.RequestedFor)"
+        $buildId = "$(Build.BuildId)"
+        $releaseTitle = "Release para $repoName na branch $branchName - Build ID $buildId"
+
+        # Corpo da requisição para criar a release
+        $body = @{
+            "short_description" = $releaseTitle
+            "category" = "Software"
+            "priority" = "1"
+            "assignment_group" = "Operação PRD"
+            "requested_by" = $commitUser
+            "description" = "Criando release para o repositório $repoName, branch $branchName, autor $commitUser"
+        } | ConvertTo-Json
+
+        # Chamada para a API do ServiceNow para criar a release
+        $response = Invoke-RestMethod -Uri "$serviceNowInstance/api/now/table/release" `
+            -Method Post `
+            -Headers @{ Authorization = "Basic $authInfo" } `
+            -ContentType "application/json" `
+            -Body $body
+
+        Write-Host "Release criada com ID: $($response.result.number)"
+      displayName: 'Criar Release no ServiceNow'
+
+# 3. Estágio de PRD com GMUD e verificação de aprovação do ServiceNow
+- stage: PRD
+  dependsOn: CriarRelease
+  condition: succeeded()
+  jobs:
+  - job: CriarGMUDPRD
+    steps:
+    - powershell: |
+        $serviceNowInstance = "$(ServiceNowInstance)"
+        $user = "$(ServiceNowUser)"
+        $password = "$(ServiceNowPassword)"
+        $authInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("$($user):$($password)"))
+
+        # Variáveis da pipeline do Azure DevOps
+        $repoName = "$(Build.Repository.Name)"
+        $branchName = "$(Build.SourceBranchName)"
+        $commitUser = "$(Build.RequestedFor)"
+        $buildId = "$(Build.BuildId)"
+        $changeTitle = "Mudança para $repoName na branch $branchName - Build ID $buildId"
+
+        # Solicitar a data de implementação em PRD
+        $gmudData = Read-Host -Prompt 'Insira a data de subida para PRD (formato YYYY-MM-DD)'
+
+        $body = @{
+            "short_description" = $changeTitle
+            "category" = "Software"
+            "priority" = "1"
+            "assignment_group" = "Operação PRD"
+            "requested_by" = $commitUser
+            "description" = "Repositório: $repoName, Branch: $branchName, Autor: $commitUser"
+            "start_date" = $gmudData
+        } | ConvertTo-Json
+
+        # Chamada para a API do ServiceNow para criar a GMUD
+        $response = Invoke-RestMethod -Uri "$serviceNowInstance/api/now/table/change_request" `
+            -Method Post `
+            -Headers @{ Authorization = "Basic $authInfo" } `
+            -ContentType "application/json" `
+            -Body $body
+
+        $gmudNumber = $response.result.number
+        Write-Host "GMUD criada com ID: $gmudNumber para a data $gmudData"
+
+    - powershell: |
+        # Verifica aprovação da GMUD
+        $serviceNowInstance = "$(ServiceNowInstance)"
+        $user = "$(ServiceNowUser)"
+        $password = "$(ServiceNowPassword)"
+        $authInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("$($user):$($password)"))
+
+        $gmudNumber = "$(gmudNumber)"  # ID da GMUD criada no passo anterior
+        $isApproved = $false
+
+        Write-Host "Verificando aprovação da GMUD no ServiceNow..."
+
+        while (-not $isApproved) {
+            $response = Invoke-RestMethod -Uri "$serviceNowInstance/api/now/table/change_request?number=$gmudNumber" `
+                -Method Get `
+                -Headers @{ Authorization = "Basic $authInfo" } `
+                -ContentType "application/json"
+
+            $approvalStatus = $response.result.approval
+
+            if ($approvalStatus -eq "approved") {
+                $isApproved = $true
+                Write-Host "GMUD aprovada no ServiceNow!"
+            } else {
+                Write-Host "GMUD ainda não aprovada. Aguardando..."
+                Start-Sleep -Seconds 60  # Espera de 1 minuto antes de verificar novamente
+            }
+        }
+      displayName: 'Verificar Aprovação da GMUD no ServiceNow'
+
+    # Estágio final de deploy após aprovação automática via ServiceNow
+    - task: AzurePowerShell@5
+      displayName: 'Deploy para PRD após aprovação da GMUD'
+      inputs:
+        azureSubscription: 'Sua-Subscrição'
+        scriptType: 'inlineScript'
+        inline: |
+          Write-Host "Iniciando deploy para PRD após aprovação da GMUD no ServiceNow..."
