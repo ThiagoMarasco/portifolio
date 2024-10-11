@@ -90,41 +90,56 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-// Supondo que esta função adiciona o novo campo de texto
 function adicionarCampoDeTexto(conteudo) {
     const novoCampoTexto = document.createElement('div');
     novoCampoTexto.classList.add('centro-text-mobile');
     novoCampoTexto.innerHTML = `<p>${conteudo}</p>`;
-    const container = document.querySelector('.centro-mobile'); // ou '.barra-magica', conforme a estrutura do seu HTML
+    const container = document.querySelector('#adicionar'); // ou '.barra-magica', conforme a estrutura do seu HTML
     container.appendChild(novoCampoTexto);
 
     // Rola para o novo conteúdo adicionado
-    // Usando setTimeout para garantir que a rolagem aconteça após o navegador processar a adição do novo elemento
     setTimeout(() => {
         container.scrollTop = container.scrollHeight;
     }, 0);
+
+    // Adiciona o botão "Voltar" apenas uma vez
+    adicionarBotaoVoltar(container);
+    
+}
+
+function adicionarBotaoVoltar(container) {
+    // Verifica se o botão "Voltar" já existe
+    if (!document.getElementById('limpar')) {
+        const botaoVoltar = document.createElement('button');
+        botaoVoltar.id = 'limpar';
+        botaoVoltar.textContent = 'Voltar';
+        botaoVoltar.classList.add('centro-text-mobile'); // Adiciona uma classe para manter o estilo
+
+        botaoVoltar.addEventListener('click', function() {
+            container.innerHTML = ''; // Limpa todo o conteúdo
+        });
+
+        container.appendChild(botaoVoltar); // Adiciona o botão ao final do container
+    }
 }
 
 // Detectar clique em cada botão e adicionar campo de texto correspondente
 document.getElementById('midias-sociais').addEventListener('click', function() {
     adicionarCampoDeTexto("Aqui estão minhas mídias sociais: <br> ");
-    
     adicionarCampoDeTexto("<a href='https://github.com/ThiagoMarasco'>GitHub</a> <br> ");
-    adicionarCampoDeTexto("<a href='https://www.linkedin.com/in/thiago-marasco/'>Linkdin</a> ");
-    adicionarCampoDeTexto("<a href='https://drive.google.com/u/0/uc?id=1ddvRlba4ox4zGYMMpqwxek1Pi_E0ttAw&export=download'>Curriculo</a> <br> ");
-
-     
+    adicionarCampoDeTexto("<a href='https://www.linkedin.com/in/thiago-marasco/'>LinkedIn</a> ");
+    adicionarCampoDeTexto("<a href='https://drive.google.com/u/0/uc?id=1ddvRlba4ox4zGYMMpqwxek1Pi_E0ttAw&export=download'>Currículo</a> <br> ");
+    
 });
 
 document.getElementById('apenas-olhando').addEventListener('click', function() {
-    adicionarCampoDeTexto("<a href='https://drive.google.com/u/0/uc?id=1ddvRlba4ox4zGYMMpqwxek1Pi_E0ttAw&export=download'>Curriculo</a> <br> ");
+    adicionarCampoDeTexto("<a href='https://drive.google.com/u/0/uc?id=1ddvRlba4ox4zGYMMpqwxek1Pi_E0ttAw&export=download'>Currículo</a> <br> ");
+    
 });
 
 document.getElementById('contratar').addEventListener('click', function() {
-    adicionarCampoDeTexto('Ótimo! Vamos discutir sobre o projeto. <br> Me envie um email uma mensagem aqui:');
-    
-    adicionarCampoDeTexto("<a href='https://www.linkedin.com/in/thiago-marasco/'>Linkdin</a> ");
-
+    adicionarCampoDeTexto('Ótimo! Vamos discutir sobre o projeto. <br> Me envie uma mensagem aqui:');
+    adicionarCampoDeTexto("<a href='https://www.linkedin.com/in/thiago-marasco/'>LinkedIn</a> ");
     adicionarCampoDeTexto("<a href='mailto:thiago.s.marasco@gmail.com?Subject=Assunto%20do%20Email&Body=Corpo%20do%20Email'>Enviar Email</a>");
-
+    
 });
